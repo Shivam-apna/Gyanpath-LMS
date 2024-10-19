@@ -4,6 +4,8 @@ import { ViewIcon } from "@chakra-ui/icons"
 import { useNavigate } from 'react-router-dom'
 import axios from "axios"
 import { Link } from 'react-router-dom'
+import styles from './LoginSignup.module.css';
+
 import Navbar from '../Navbar/Navbar'
 function Login() {
 
@@ -58,16 +60,16 @@ function Login() {
     }
   }
   return (
-    <Box bgColor={"#080710"} p={2} h={"100vh"} display={"flex"} flexDir={"column"} alignItems={"center"} justifyContent={"center"}>
+    <Box bgColor={"#fff"} p={2} h={"100vh"} display={"flex"} flexDir={"column"} alignItems={"center"} justifyContent={"center"}>
     
       <Box >
         <Link to={"/"}>
-          <Image src='https://masaischool.com/img/footer/masai-logo.svg' />
+        <Image className={styles['logo-image']} src='../../vidya-sangrah.png' />
         </Link>
       </Box>
 
 
-      <Box bgColor={"#66b9bf"} color={"white"} shadow={"lg"} w="fit-content" p={"3%"} borderRadius={10} display={"flex"} flexDir="column" alignItems="center" justifyContent={"center"} gap={5}>
+      <Box bgColor={"#a435f0"} color={"white"} shadow={"lg"} w="fit-content" p={"3%"} borderRadius={10} display={"flex"} flexDir="column" alignItems="center" justifyContent={"center"} gap={5}>
         <Text fontWeight={600} fontSize={25}>Login</Text>
 
         <InputGroup size='md'>
@@ -90,13 +92,13 @@ function Login() {
           </InputRightElement>
         </InputGroup>
 
-        <Button onClick={handleForm} bgColor={"green"} isLoading={isLoading ? true : false} loadingText="Submitting">
+        <Button className={styles['submit']} onClick={handleForm} bgColor={"green"} isLoading={isLoading ? true : false} loadingText="Submitting">
           submit
         </Button>
-        <Text fontWeight={600} fontSize={20}>Don't have an account?</Text>
+        <Text className={styles['capture-atention']} fontWeight={600} fontSize={20}>Don't have an account?</Text>
         <Text color={"blue"} fontWeight={600} fontSize={20}>
-          <Link to={"/signup"}>
-            SignUp
+          <Link className={styles['sign-up']} to={"/signup"}>
+            Sign Up
           </Link>
         </Text>
       </Box>
