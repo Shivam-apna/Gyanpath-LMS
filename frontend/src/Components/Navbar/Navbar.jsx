@@ -136,7 +136,7 @@ function Navbar() {
               <DrawerHeader bg={"black"}>
                 <Box width="fit-content">
                   <Link to={"/"}>
-                    <Image src="https://masaischool.com/img/footer/masai-logo.svg" />
+                    <Image src="https://VidyaSangrahschool.com/img/footer/VidyaSangrah-logo.svg" />
                   </Link>
                 </Box>
               </DrawerHeader>

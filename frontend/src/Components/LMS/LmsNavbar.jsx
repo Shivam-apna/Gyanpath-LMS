@@ -65,7 +65,7 @@ function LmsNavbar({ inUserList }) {
     >
       <Box>
         <Link to={"/"}>
-          <Image src="https://masaischool.com/img/footer/masai-logo.svg" />
+          <Image src="https://VidyaSangrahschool.com/img/footer/VidyaSangrah-logo.svg" />
         </Link>
       </Box>
       <Flex
@@ -163,7 +163,7 @@ function LmsNavbar({ inUserList }) {
                     <Link to={"/"}>
                       <Image
                         bgColor={"white"}
-                        src="https://www.masaischool.com/img/navbar/logo.svg"
+                        src="https://www.VidyaSangrahschool.com/img/navbar/logo.svg"
                       />
                     </Link>
                   )}
