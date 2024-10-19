@@ -13,7 +13,7 @@ import React, { useEffect, useState } from "react";
 import Footer from "../../Components/Footer/Footer";
 import StudentNavbar from "../NavStudent/StudentNavbar";
 import { useNavigate } from "react-router-dom";
-// import webImage from "./analy.webp";
+// import { webImage } from "";
 
 function Courses() {
   let toast = useToast();
@@ -26,49 +26,54 @@ function Courses() {
   let navigate = useNavigate();
   let arr = [
     {
-      //   src: webImage,
-      url: "https://masai-website-images.s3.ap-south-1.amazonaws.com/opt3_dca2a44837.webp",
       elg: "GRADUATES &amp; 12TH PASS",
       type: "full time",
       req: "requires no coding experience",
       level: "Level 1 - Full Stack",
       course: "Web Development",
-      date: "Course starts on 08 May 2023",
-      weeks: "Launch your career in 35 weeks",
-      rs: "Pay after placement of 5 LPA or above",
+      date: "Course starts on 08 May 2024",
     },
     {
-      url: "https://masai-website-images.s3.ap-south-1.amazonaws.com/opt3_dca2a44837.webp",
       elg: "FINAL YEAR STUDENTS, WORKING PROFESSIONALS",
       type: "part time",
       req: "requires no coding experience",
       level: "Level 1 - Full Stack",
       course: "Web Development",
-      date: "Course starts on 20 Mar 2023",
-      weeks: "Launch your career in 30 weeks",
-      rs: "Pay after placement of 5 LPA or above",
+      date: "Course starts on 20 Mar 2024",
     },
     {
-      url: "https://masai-website-images.s3.ap-south-1.amazonaws.com/opt4_f8d111800e.webp",
       elg: "FINAL YEAR STUDENTS, WORKING PROFESSIONALS",
       type: "full time",
       req: "REQUIRES NO ANALYTICS EXPERIENCE",
       level: "Level 1 ",
       course: "Data Analytics",
-      date: "Course starts on 29 May 2023",
-      weeks: "Course starts on 29 May 2023",
-      rs: "Pay after placement of 5 LPA or above",
+      date: "Course starts on 29 May 2024",
     },
     {
-      url: "https://masai-website-images.s3.ap-south-1.amazonaws.com/opt4_f8d111800e.webp",
       elg: "WORKING PROFESSIONALS",
       type: "full time",
       req: "REQUIRES MINIMUM ONE YEAR OF TECH EXPERIENCE",
       level: "Level 2",
       course: "Backend Development",
-      date: "Course starts on 08 May 2023",
-      weeks: "Launch your career in 22 weeks",
-      rs: "Pay after placement of 10 LPA or above",
+      date: "Course starts on 08 SEP 2023",
+    },
+    {
+      url: "",
+      elg: "WORKING PROFESSIONALS",
+      type: "full time",
+      req: "requires no coding experience",
+      level: "Level 1",
+      course: "MERA MONITOR",
+      date: "Course starts on 19 Oct 2024",
+    },
+    {
+      url: "",
+      elg: "WORKING PROFESSIONALS",
+      type: "full time",
+      req: "requires no coding experience",
+      level: "Level 1",
+      course: "KARYA KEEPER",
+      date: "Course starts on 19 Oct 2024",
     },
   ];
   let user = JSON.parse(localStorage.getItem("currentUser"));
@@ -83,7 +88,7 @@ function Courses() {
       coursetime: el.type,
     };
     setLoading(true);
-    fetch("https://lms-iliv.onrender.com/application/createapplication", {
+    fetch("http://localhost:3000/application/createapplication", {
       method: "POST",
       body: JSON.stringify(payload),
       headers: {
@@ -109,7 +114,7 @@ function Courses() {
   };
   // ----------fetching applications-----------//
   let getApplication = () => {
-    fetch("https://lms-iliv.onrender.com/application/getapplicationlist", {
+    fetch("http://localhost:3000/application/getapplicationlist", {
       method: "GET",
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -134,7 +139,7 @@ function Courses() {
   };
 
   let getStudentList = () => {
-    fetch("https://lms-iliv.onrender.com/adminwork/getStudentsList", {
+    fetch("http://localhost:3000/adminwork/getStudentsList", {
       method: "GET",
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -289,7 +294,7 @@ function Courses() {
                     </Box>
                     <Box display={"flex"} gap={2} alignItems={"center"}>
                       <TimeIcon />
-                      <Text>{el.weeks}</Text>
+                      <Text>{el.startlearning}</Text>
                     </Box>
                     <Box display={"flex"} gap={2} alignItems={"center"}>
                       <HiOutlineCurrencyRupee />

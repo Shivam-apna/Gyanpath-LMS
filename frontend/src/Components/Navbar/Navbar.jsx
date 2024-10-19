@@ -32,6 +32,7 @@ import { NavLink } from "react-router-dom";
 
 function Navbar() {
   let isToken = localStorage.getItem("token");
+  console.log(isToken);
   let currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
   let user = localStorage.getItem("user");
@@ -67,22 +68,22 @@ function Navbar() {
         color="teal.900"
         fontWeight={600}
       >
-        {isToken && currentUser.person === "admin" && (
+        {user === "admin" && (
           <Box color={"white"}>
             <NavLink to={"/addassignment"}>Assignments</NavLink>
           </Box>
         )}
-        {isToken && currentUser.person === "admin" && (
+        {user === "admin" && (
           <Box color={"white"}>
             <NavLink to={"/addlecture"}>Lectures</NavLink>
           </Box>
         )}
-        {isToken && currentUser.person === "admin" && (
+        {isToken && user === "admin" && (
           <Box color={"white"}>
             <NavLink to={"/student"}>Students</NavLink>
           </Box>
         )}
-        {isToken && currentUser.person === "admin" && (
+        {isToken && user === "admin" && (
           <Box color={"white"}>
             {isToken ? (
               <Menu>
@@ -113,7 +114,7 @@ function Navbar() {
       </Flex>
 
       {/* if screen size is small or medium */}
-      {isToken && currentUser.person === "admin" && (
+      {isToken && user === "admin" && (
         <>
           <HamburgerIcon
             aria-label="Options"

@@ -56,7 +56,7 @@ function Assignments() {
   const finalRef = React.useRef(null);
 
   let getAssignment = () => {
-    fetch("https://lms-iliv.onrender.com/adminwork/getassignment", {
+    fetch("http://localhost:3000/adminwork/getassignment", {
       method: "GET",
       headers: {
         "content-type": "application/json",
@@ -96,8 +96,8 @@ function Assignments() {
       };
       onClose();
       let url = temp
-        ? `https://lms-iliv.onrender.com/adminwork/editassignment/${editId}`
-        : "https://lms-iliv.onrender.com/adminwork/createassignment";
+        ? `http://localhost:3000/adminwork/editassignment/${editId}`
+        : "http://localhost:3000/adminwork/createassignment";
       let method = temp ? "PATCH" : "POST";
       fetch(url, {
         method: method,
@@ -134,7 +134,7 @@ function Assignments() {
     }
   };
   let handleDelete = (id) => {
-    fetch(`https://lms-iliv.onrender.com/adminwork/removeassignment/${id}`, {
+    fetch(`http://localhost:3000/adminwork/removeassignment/${id}`, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
