@@ -1,1 +1,1 @@
-# Gyanpath-LMS
+# VidyaSangrah-LMS
