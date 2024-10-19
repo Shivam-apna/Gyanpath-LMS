@@ -1,0 +1,46 @@
+img.logo-image{
+    user-select: none !important;
+    height: 3rem;
+    border-radius: 50%;
+    margin-bottom:1rem;
+  }
+
+  .log-in, .sign-up {
+    border: dashed #fff 2px;
+    border-radius: 0.5rem;
+    padding: 0.1rem 0.5rem;
+    color: #fff;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Add transition */
+  }
+  
+  .log-in:hover, .sign-up:hover {
+    background-color: #ffb400; /* Change background on hover */
+    transform: scale(1.05); /* Slightly scale up the button */
+  border:0;
+  color:#000;
+}
+
+@keyframes attention-grab {
+    0% {
+      opacity: 0.5;
+      transform: translateY(0);
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(-10px); /* Move up */
+    }
+    100% {
+      opacity: 0.5;
+      transform: translateY(0);
+    }
+  }
+  
+  .capture-atention {
+    animation: attention-grab 1.5s infinite; /* Apply the animation */
+    color: #fff; /* Adjust color as needed */
+  }
+
+  .submit:hover{
+    background-color: black !important;
+    color:#fff;
+  }
