@@ -3,8 +3,22 @@ const mongoose = require("mongoose");
 const app = express();
 let cors = require("cors");
 require("dotenv").config();
-
 app.use(express.json());
+
+
+const { adminRouter } = require("./routes/admin.route")
+const { adminWork } = require("./routes/adminWork.route")
+const { authentication } = require("./middleware/authentication")
+const { studentRouter } = require("./routes/student.route")
+const { applicationtRoute } = require("./routes/application.route")
+const { studentWork } = require("./routes/StudentWork.route")
+
+
+
+
+
+
+
 app.use(cors({ origin: "*" }));
 
 let PORT = process.env.PORT || 3001;
@@ -12,6 +26,14 @@ let PORT = process.env.PORT || 3001;
 app.get("/", (req, res) => {
   res.send("welcome to home")
 })
+
+// ------admin----//
+app.use("/student", studentRouter)
+app.use("/admin", adminRouter)
+app.use(authentication)
+app.use("/adminwork", adminWork)
+app.use("/application", applicationtRoute)
+app.use("/studentwork", studentWork)
 
 
 // Establish database connection before starting the server
