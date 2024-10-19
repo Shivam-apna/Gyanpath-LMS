@@ -1,5 +1,5 @@
 const express = require("express")
-let { StudentModel } = require("../model/student.model")
+let { StudentModel } = require("../model/employee.model")
 
 
 let jwt = require("jsonwebtoken")
